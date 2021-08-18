@@ -1,6 +1,8 @@
 package io.github.thebusybiscuit.slimefun4.implementation.items.multiblocks;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -60,7 +62,7 @@ public class MagicWorkbench extends AbstractCraftingTable {
                 }
             }
 
-            if (inv.getContents().length == 0) {
+            if (Arrays.stream(inv.getContents()).noneMatch(Objects::nonNull)) {
                 SlimefunPlugin.getLocalization().sendMessage(p, "machines.inventory-empty", true);
             } else {
                 SlimefunPlugin.getLocalization().sendMessage(p, "machines.pattern-not-found", true);

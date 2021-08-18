@@ -19,6 +19,9 @@ import be.seeseemelk.mockbukkit.ServerMock;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 class TestPortableDustbin implements SlimefunItemTest<PortableDustbin> {
 
     private static ServerMock server;
@@ -53,7 +56,7 @@ class TestPortableDustbin implements SlimefunItemTest<PortableDustbin> {
 
         // We expect an empty Inventory to be open now
         Inventory openInventory = player.getOpenInventory().getTopInventory();
-        Assertions.assertEquals(0, openInventory.getContents().length);
+        Assertions.assertTrue(Arrays.stream(openInventory.getContents()).noneMatch(Objects::nonNull));
     }
 
 }
