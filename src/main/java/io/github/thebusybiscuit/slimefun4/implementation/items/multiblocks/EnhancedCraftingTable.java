@@ -53,7 +53,7 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
                 }
             }
 
-            if (inv.isEmpty()) {
+            if (inv.getContents().length == 0) {
                 SlimefunPlugin.getLocalization().sendMessage(p, "machines.inventory-empty", true);
             } else {
                 SlimefunPlugin.getLocalization().sendMessage(p, "machines.pattern-not-found", true);

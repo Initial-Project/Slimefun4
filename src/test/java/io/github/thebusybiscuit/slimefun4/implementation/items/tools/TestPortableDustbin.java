@@ -53,7 +53,7 @@ class TestPortableDustbin implements SlimefunItemTest<PortableDustbin> {
 
         // We expect an empty Inventory to be open now
         Inventory openInventory = player.getOpenInventory().getTopInventory();
-        Assertions.assertTrue(openInventory.isEmpty());
+        Assertions.assertEquals(0, openInventory.getContents().length);
     }
 
 }
